@@ -1,13 +1,16 @@
-import Header from "./components/layouts/Header";
-import Main from "./components/layouts/Main";
-import Footer from "./components/layouts/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import MoviePage from "./pages/MoviePage";
 
-export default function App() {
+function App() {
   return (
-    <>
-      <Header />
-      <Main />
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/movies/:id" element={<MoviePage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
+
+export default App;
